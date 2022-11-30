@@ -124,7 +124,7 @@ class ProjectListView(View):
         context = {
             'user': user,
             'open_proj_set': open_act_set,
-            'closed_proj_set' :  closed_act_set
+            'closed_proj_set' : closed_act_set
             }
         return render(request, self.template_name, context)
 
