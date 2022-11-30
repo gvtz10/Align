@@ -1,0 +1,45 @@
+
+{% load crispy_forms_tags %}
+<head>
+
+
+{% block content %}
+<h1 style="text-align: right; padding-top: 1em; padding-bottom: 1em;">Welcome, {{ user.username }}</h1>
+
+{% block pubic-plist %}
+
+{% endblock %}
+
+
+<div class="sidebar" style = "height: 100%; 
+width: 140px;
+position: fixed;z-index: 1;
+top: 0; left: 0; background-color: #333;
+overflow-x: hidden;
+padding-top: 20px ">
+  <a href="{% url 'projs' %}" style =  "padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-sixe: 40px;
+  color: white;
+  display: block;"> Projects </a>
+  <a href="{% url 'acts' %}" style =  "padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-sixe: 25px;
+  color: white;
+  display: block;"> Actions </a>
+  <a href="{% url 'files' %}"style =  "padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-sixe: 25px;
+  color: white;
+  display: block;"> Files</a> <!--  add files URL -->>
+</div>
+</head>
+
+
+<br></br>
+<div class="text-center">
+  <a href="{% url 'proj-new' %}"><button type="button" class="btn btn-primary">New Project</button></a>
+  <a href="{% url 'act-new' %}"><button type="button" class="btn btn-primary">New Action</button></a>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,9 @@
+
+{% load crispy_forms_tags %}
+<head>
+{% block content %}
+<h1 style="text-align: center; padding-top: 1em; padding-bottom: 1em;">  { user.username }, please upgrade your subscription to accses this feture.</h1>
+</head>
+
+<div class="text-center">
+  <a href="{% url 'home' %}"><button type="button" class="btn btn-primary">Home</button></a>

@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 style="text-align: left; padding-top: 1em; padding-bottom: 0em;">Open Action overview:</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+        <th scope="col">No.</th>
+        <th scope="col">Description</th>
+        <th scope="col">Status</th>
+        <th scope = "col"> Tags</th>
+        <th scope="col">Start Date</th>
+        <th scope="col">Start Time</th>
+        <th scope="col">End Date</th>
+        <th scope="col">End Time</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    {% for act in open_act_set %}
+    <tr>
+      <th scope="row">{{ proj.id }}</th>
+        <td>{{ act.description }}</td>
+        <td>{{ act.status }}</td>
+        <td>{{ act.get_tag_list }}</td>
+        <td>{{ act.start_date }}</td>
+        <td>{{ act.start_time }}</td>
+        <td>{{ act.end_date }}</td>
+        <td>{{ act.end_time }}</td>
+      <td>
+        <a style="margin-right: 30px;" href="{% url 'act-update' act.id %}">Edit</a>
+        <a href="{% url 'act-delete' act.id %}">Remove</a> 
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<h1 style="text-align: left; padding-top: 1em; padding-bottom: 0em;">Closed Action overview:</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+        <th scope="col">No.</th>
+        <th scope="col">Description</th>
+        <th scope="col">Status</th>
+        <th scope ="col"> Tags</th>
+        <th scope="col">Start Date</th>
+        <th scope="col">Start Time</th>
+        <th scope="col">End Date</th>
+        <th scope="col">End Time</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    {% for act in closed_act_set %}
+    <tr>
+      <th scope="row">{{ proj.id }}</th>
+        <td>{{ act.description }}</td>
+        <td>{{ act.status }}</td>
+        <td>{{ act.get_tag_list }}</td>
+        <td>{{ act.start_date }}</td>
+        <td>{{ act.start_time }}</td>
+        <td>{{ act.end_date }}</td>
+        <td>{{ act.end_time }}</td>
+      <td>
+        <a style="margin-right: 30px;" href="{% url 'act-update' act.id %}">Edit</a>
+        <a href="{% url 'act-delete' act.id %}">Remove</a> 
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock content %}
