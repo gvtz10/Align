@@ -119,8 +119,8 @@ class ProjectListView(View):
     
     def get(self, request, *args, **kwargs):
         user = request.user
-        private_act_set = user.project_set.all.filer(status = False)
-        public_act_set = user.project_set.all.filetr(status = True)
+        closed_act_set = user.project_set.all.filer(status = False)
+        open_act_set = user.project_set.all.filetr(status = True)
         context = {
             'user': user,
             'open_proj_set': open_act_set,
